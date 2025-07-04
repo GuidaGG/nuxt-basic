@@ -20,9 +20,5 @@ jobs:
             docker run --rm \
               -v /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output:/output \
               -v /home/${{ secrets.VPS_USER }}/.ssh:/root/.ssh:ro \
-              nuxt-builder bash -c "
-                chmod 700 /root/.ssh && \
-                chmod 600 /root/.ssh/id_rsa && \
-                ssh-keyscan github.com >> /root/.ssh/known_hosts && \
-                git clone git@github.com:GuidaGG/nuxt-basic.git /output/nuxt-basic
-              "
+              nuxt-builder bash -c "ssh-keyscan github.com >> /root/.ssh/known_hosts && \
+              git clone git@github.com:GuidaGG/nuxt-basic.git /output/nuxt-basic"
