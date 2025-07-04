@@ -15,10 +15,15 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-              cd /home/${{ secrets.VPS_USER }}/frontend-builder/nuxt-builder
-              docker build -t nuxt-builder .
-              docker run --rm \
-                -v /home/${{ secrets.VPS_USER }}/.ssh:/root/.ssh:ro \
-                -v /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output:/output \
-                nuxt-builder bash -c "ssh-keyscan github.com >> /root/.ssh/known_hosts && \
-                git clone git@github.com:GuidaGG/nuxt-basic.git /output/nuxt-basic"
+            # Ensure known_hosts on VPS already trusts GitHub
+            ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+            # Build Docker image
+            cd /home/${{ secrets.VPS_USER }}/frontend-builder/nuxt-builder
+            docker build -t nuxt-builder .
+
+            # Run container with SSH keys mounted read-only
+            docker run --rm \
+              -v /root/.ssh:/root/.ssh:ro \
+              -v /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output:/output \
+              nuxt-builder git clone git@github.com:GuidaGG/nuxt-basic.git /output/nuxt-basic
