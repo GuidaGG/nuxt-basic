@@ -20,6 +20,8 @@ jobs:
             
             cd /home/${{ secrets.VPS_USER }}/frontend-builder
             docker run --rm \
-              -v $(pwd)/frontend-output:/output \
-              -v /home/${{ secrets.VPS_USER }}/.ssh:/root/.ssh:ro \
-              nuxt-builder
+            -v $(pwd)/frontend-output:/output \
+            -v /home/${{ secrets.VPS_USER }}/.ssh:/root/.ssh:ro \
+            nuxt-builder bash -c "
+              mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts && git clone git@github.com:your/repo.git
+            "
