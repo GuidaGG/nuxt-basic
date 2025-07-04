@@ -27,3 +27,7 @@ jobs:
               -v /root/.ssh:/root/.ssh:ro \
               -v /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output:/output \
               nuxt-builder git clone git@github.com:GuidaGG/nuxt-basic.git /output/nuxt-basic
+
+            # Copy built files to static folder
+            mkdir -p /home/root/static-folder
+            cp -r /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output/* /home/root/static-folder/
