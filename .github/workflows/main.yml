@@ -1,0 +1,25 @@
+name: Trigger Nuxt Build in VPS Container
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_on_vps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into VPS and Build in Container
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /home/${{ secrets.VPS_USER }}/frontend-builder/nuxt-builder
+            docker build -t nuxt-builder .
+            
+            cd /home/${{ secrets.VPS_USER }}/frontend-builder
+            docker run --rm \
+              -v $(pwd)/frontend-output:/output \
+              -v /home/${{ secrets.VPS_USER }}/.ssh:/root/.ssh:ro \
+              nuxt-builder
