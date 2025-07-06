@@ -30,4 +30,4 @@ jobs:
 
             # Copy built files to static folder
             mkdir -p /home/root/static-folder
-            cp -r /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output/* /home/root/static-folder/
+            cp -r /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output/nuxt-basic/* /home/root/static-folder/
