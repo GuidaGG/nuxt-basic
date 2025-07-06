@@ -27,11 +27,12 @@ jobs:
             -v /root/.ssh:/root/.ssh:ro \
             -v /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output:/output \
             nuxt-builder bash -c "
-              git clone git@github.com:GuidaGG/nuxt-basic.git /app/nuxt-basic && \
-              cd /app/nuxt-basic && \
-              npm ci && \
-              npm run generate && \
-              cp -r .output/public/* /output/
+              if [ -d /app/nuxt-basic ]; then
+                cd /app/nuxt-basic && git pull origin main;
+              else
+                git clone git@github.com:GuidaGG/nuxt-basic.git /app/nuxt-basic;
+              fi
+              cd /app/nuxt-basic && npm ci && npm run generate && cp -r .output/public/* /output/
             "
 
             # Copy built files to static folder
