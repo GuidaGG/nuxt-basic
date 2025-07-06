@@ -33,3 +33,8 @@ jobs:
               npm run generate && \
               cp -r .output/public/* /output/
             "
+
+            # Copy built files to static folder
+            mkdir -p /home/root/static-folder
+            cp -r /home/${{ secrets.VPS_USER }}/frontend-builder/frontend-output/nuxt-basic/* /home/root/static-folder/
+
