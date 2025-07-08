@@ -1,7 +1,7 @@
 <template>
     <Container>
         <h1 class="text-3xl font-bold mb-4">Hi!</h1>
-        <p class="text-lg text-gray-700">Welcome to the nuxt start.</p>
+        <p class="text-lg">Welcome to the nuxt start.</p>
         <ul class="list-disc">
             Things to do:
             <li >
@@ -9,6 +9,9 @@
             </li>
             <li>
                 create basic seo
+            </li>
+            <li>
+                add basic fetch ?
             </li>
         </ul>
     </Container>
