@@ -4,14 +4,29 @@
         <p class="text-lg">Welcome to the nuxt start.</p>
         <ul class="list-disc">
             Things to do:
-            <li >
-                create a tailwind config
+            <li>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" checked disabled />
+                    <span>create a tailwind config</span>
+                </label>
             </li>
             <li>
-                create basic seo
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" disabled />
+                    <span>create basic seo</span>
+                </label>
             </li>
             <li>
-                add basic fetch ?
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" checked disabled />
+                    <span>fetch pages content by slug</span>
+                </label>
+            </li>
+            <li>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" checked disabled />
+                    <span>fetch menu content</span>
+                </label>
             </li>
         </ul>
     </Container>

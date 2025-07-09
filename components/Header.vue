@@ -3,7 +3,9 @@
         <div class="container mx-auto flex items-center justify-between py-4 px-6">
             <!-- Logo -->
             <div class="flex items-center h-8 min-w-16">
-                <span class="font-bold text-xl text-gray-800">Logo</span>
+                <NuxtLink to="/" class="font-bold text-xl text-gray-800" aria-label="Go to homepage">
+                    <span aria-hidden="true">Logo</span>
+                </NuxtLink>
             </div>
             <!-- Navigation -->
             <nav>
