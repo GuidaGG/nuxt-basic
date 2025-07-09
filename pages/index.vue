@@ -1,34 +1,23 @@
 <template>
     <Container>
-        <h1 class="text-3xl font-bold mb-4">Hi!</h1>
-        <p class="text-lg">Welcome to the nuxt start.</p>
-        <ul class="list-disc">
-            Things to do:
-            <li>
-                <label class="flex items-center space-x-2">
-                    <input type="checkbox" checked disabled />
-                    <span>create a tailwind config</span>
-                </label>
-            </li>
-            <li>
-                <label class="flex items-center space-x-2">
-                    <input type="checkbox" disabled />
-                    <span>create basic seo</span>
-                </label>
-            </li>
-            <li>
-                <label class="flex items-center space-x-2">
-                    <input type="checkbox" checked disabled />
-                    <span>fetch pages content by slug</span>
-                </label>
-            </li>
-            <li>
-                <label class="flex items-center space-x-2">
-                    <input type="checkbox" checked disabled />
-                    <span>fetch menu content</span>
-                </label>
-            </li>
-        </ul>
+        <h1 class="text-4xl font-bold mb-4">Hi!</h1>
+        <h2 class="text-xl">Welcome to Guidas basic nuxt project start.</h2>
+        <div class="flex gap-20">
+            <ul class="list-none">
+                <span class="font-semibold text-lg block mb-2">What it includes:</span>
+                <li>- TailwindCSS with basic custom color classes</li>
+                <li>- Fetch pages from Strapi by slug</li>
+                <li>- Feath header and footer menu</li>
+                <li>- Simple DynamicZone, ContentText and ContentMedia Components</li>
+            </ul>
+
+             <ul class="list-none">
+                <span class="font-semibold text-lg block mb-2">What should also incluse:</span>
+                <li>- Basic SEO</li>
+
+            </ul>
+        </div>
+        
     </Container>
 </template>
 

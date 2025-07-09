@@ -1,14 +1,24 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&family=Fira+Mono:wght@400;700&display=swap');
 
 @theme {
---color-primary: oklch(0.68 0.14 145);   /* Green */
---color-secondary: oklch(0.62 0.18 295); /* Purple */
---color-accent: oklch(0.85 0.02 145);    /* Light Green */
---color-dark: oklch(0.18 0.01 260);      /* Almost Black */
---color-light: oklch(0.99 0.00 0);       /* White */
+    --color-primary: oklch(0.68 0.14 145);   /* Green */
+    --color-secondary: oklch(0.62 0.18 295); /* Purple */
+    --color-accent: oklch(0.85 0.02 145);    /* Light Green */
+    --color-dark: oklch(0.18 0.01 260);      /* Almost Black */
+    --color-light: oklch(0.99 0.00 0);       /* White */
+
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: 'Merriweather', 'Georgia', serif;
+    --font-mono: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+
 }
 
 @layer base {
+    html {
+        font-size: 20px;
+        @apply font-mono;
+    }
     a {
         @apply text-primary underline transition-colors duration-200;
     }
@@ -17,14 +27,18 @@
     }
 
     h1 {
-        @apply text-dark text-4xl font-bold mb-4;
+        @apply font-sans text-dark text-4xl font-bold mb-4;
     }
 
     h2 {
-        @apply text-dark text-2xl font-semibold mb-3;
+        @apply font-sans text-dark text-2xl font-semibold mb-3;
     }
 
     h3 {
-        @apply text-dark text-xl font-medium mb-2;
+        @apply font-sans text-dark text-xl font-medium mb-2;
+    }
+
+    p {
+        @apply font-mono;
     }
 }
