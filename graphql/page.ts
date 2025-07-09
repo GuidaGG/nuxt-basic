@@ -1,5 +1,3 @@
-// ~/graphql/pageBySlug.ts
-import { gql } from 'graphql-tag'
 
 export const GET_PAGE_BY_SLUG = gql`
   query GetPageBySlug($slug: String!) {

@@ -17,7 +17,9 @@
     <Container>
     <div class="min-h-screen w-full bg-primary">
         <div v-if="page">
-            <pre>{{  JSON.stringify(page, null, 2) }}</pre>
+            <h1 class="text-3xl font-bold mb-6">{{ page.title }}</h1>
+            <p v-if="page.subtitle" class="text-xl">{{ page.subtitle }}</p>
+            <DynamicZone :page=page.page />
         </div>
         <div v-else-if="error">Failed to load page</div>
         <div v-else>Loading...</div>
