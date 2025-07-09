@@ -7,13 +7,16 @@
                 <span class="font-semibold text-lg block mb-2">What it includes:</span>
                 <li>- TailwindCSS with basic custom color classes</li>
                 <li>- Fetch pages from Strapi by slug</li>
-                <li>- Feath header and footer menu</li>
+                <li>- Fetch header and footer menu</li>
                 <li>- Simple DynamicZone, ContentText and ContentMedia Components</li>
+                <li>- Automatic Sitemap generation</li>
+                <li>- Basic SEO setup with Nuxt/Seo</li>
             </ul>
 
              <ul class="list-none">
                 <span class="font-semibold text-lg block mb-2">What should also incluse:</span>
-                <li>- Basic SEO</li>
+                <li>- OG Image</li>
+                <li>- ContentMedia Component</li>
 
             </ul>
         </div>

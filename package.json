@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/seo": "^3.1.0",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
     "@vue/apollo-composable": "^4.2.2",
     "graphql": "^15.10.1",

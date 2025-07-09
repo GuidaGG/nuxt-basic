@@ -1,5 +1,6 @@
-@import "tailwindcss";
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&family=Fira+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
 
 @theme {
     --color-primary: oklch(0.68 0.14 145);   /* Green */

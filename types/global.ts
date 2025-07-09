@@ -11,3 +11,9 @@ export interface Footer{
     pages: Page[]
   }
 }
+
+export interface PagesQuery {
+  data: {
+    pages: Array<{ slug: string }>
+  }
+}
